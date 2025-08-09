@@ -13,10 +13,10 @@ def find_logo_url_on_page(soup, base_url, logo_identifier="logo"):
         alt = img.get('alt', '').lower()
         cls = ' '.join(img.get('class', [])).lower()
         id_ = img.get('id', '').lower()
-        src = img['src']
+        src = img['src'].lower()
 
-        if (logo_identifier in alt) or (logo_identifier in cls) or (logo_identifier in id_):
-            return urljoin(base_url, src)
+        if (logo_identifier in alt) or (logo_identifier in cls) or (logo_identifier in id_) or (logo_identifier in src):
+            return urljoin(base_url, img['src'])
     return None
 
 def page_contains_logo(soup, logo_url, base_url):
