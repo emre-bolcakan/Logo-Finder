@@ -80,7 +80,7 @@ def crawl_find_logo_pages(base_url, max_pages=20, logo_identifier="logo"):
     return pages_with_logo
 
 if __name__ == "__main__":
-    base_url = input("Enter the base URL to crawl (e.g., https://www.ivimhealth.com/): ").strip()
+    base_url = input("Enter the base URL to crawl (e.g., https://www.google.com/): ").strip()
     logo_identifier = input("Enter the logo identifier keyword (optional, default='logo'): ").strip()
     if not logo_identifier:
         logo_identifier = "logo"
